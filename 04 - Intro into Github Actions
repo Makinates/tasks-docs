@@ -88,4 +88,24 @@ When your workflow is triggered, a workflow run is created that executes the wor
 
 1.  On GitHub.com, navigate to the main page of the repository.
 
+     ![Showing the command to directory](./images/gh-actions/intro-ghactions-3.png)
+
+
 1.  Under your repository name, click  Actions.
+
+     ![Showing the command to directory](./images/gh-actions/intro-ghactions-4.png)
+
+1. In the left sidebar, click the workflow you want to see.
+
+    ![Showing the command to directory](./images/gh-actions/intro-ghactions-5.png)
+
+1. From the list of workflow runs, click the name of the run to see the workflow run summary.
+
+    ![Showing the command to directory](./images/gh-actions/intro-ghactions-6.png)
+
+1. In the left sidebar or in the visualization graph, click the job you want to see <br> To view the results of a step, click the step.
+
+    ![Showing the command to directory](./images/gh-actions/intro-ghactions-7.png)
+
+_Congratulations! You have successfully created a simple Github Actions using the push event._
+
