@@ -1,16 +1,22 @@
-name: Simple Hello world Workflow
+name: learn-github-actions
 
-on: [push]
+run-name: ${{ github.actor }} is learning GitHub Actions
+
+on: 
+    workflow_dispatch:
+        inputs: 
+          node-version:
+            description: 'Enter your desired node node-version:'
+            required: true
+            type: number
 
 jobs:
-    Show-Hello-World:
-        runs-on: ubuntu-latest
-        
-        steps:
-        - 
-            name: Checkout Repository
-            uses: actions/checkout@v2
-            
-        - 
-            name: Print Hello World
-            run: echo "Hello, World!"
+  check-bats-version:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{inputs.node-version}}
+      - run: npm install -g bats
+      - run: bats -v
