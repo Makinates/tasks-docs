@@ -24,7 +24,7 @@ The pipeline is composed of three main components:
 
 The custom action (`Makinates/daniel-docker-ecs-action`) is a composite action responsible for building, pushing, and deploying the Docker image to ECS. The reusable workflow (`Makinates/daniel-gha-ecs/.github/workflows/reuseable-docker-to-ecs.yml`) acts as an intermediary, calling the custom action with the required inputs and can be extended with other actions. The sample repository (`Makinates/daniel-sample-caller-workflow/.github/workflows/ci-cd-caller.yml`) demonstrates how to call the reusable workflow with the necessary configuration.
 
-![Github Actions Workflow Layers](./images/gha-workflows/gha-1.png)
+![Github Actions Workflow Layers](./images/gha-workflows/gha-1new.png)
 
 ## Layer 3 Repository Structure: Caller Workflow
 
