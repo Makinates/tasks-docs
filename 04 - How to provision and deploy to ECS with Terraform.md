@@ -187,14 +187,14 @@ File: `loadbalancer.tf`
 resource "aws_lb" "makinode_app_lb" {
   name               = "makinode-app-lb"
   load_balancer_type = "application"
-  subnets            = [aws_subnet.public_subnet[0].id, aws_subnet.public_subnet[1].id]
+  subnets            = [aws_subnet.public_subnets[0].id, aws_subnet.public_subnets[1].id]
   security_groups    = [aws_security_group.makinode_app_sg.id]
 }
 ```
 
 > The `load_balancer_type` is set to "application", indicating it's an Application Load Balancer.
 >
-> The `subnets` argument specifies the public subnets where the load balancer should be deployed, using the IDs of the `public_subnet[0]` and `public_subnet[1]` resources.
+> The `subnets` argument specifies the public subnets where the load balancer should be deployed, using the IDs of the `public_subnets[0]` and `public_subnets[1]` resources.
 >
 > The `security_groups` argument sets the security group to be applied to the load balancer, using the ID of the `makinode_app_sg` resource.
 
