@@ -300,4 +300,22 @@ Here's a breakdown of the steps in the custom action:
 
 - **Deploy to Amazon ECS**: This step uses the `aws-actions/amazon-ecs-deploy-task-definition@v1` action to deploy the updated task definition to the specified ECS service and cluster. It waits for the service to stabilize after the deployment.
 
-![Workflow Success](./images/gha-workflows/gha-2.png)
+## Verifying CI/CD Pipeline
+
+From the ECS guides, we have a running ECS infrastructure with a service running two tasks using the `simple-node-app` image from our docker hub repository.
+
+![Showing the deployed application running in the ECS cluster](./images/ecs-tf/tf-ecs-4.png)
+
+![View App in Browser](./images/ecs-tf/tf-ecs-5.png)
+
+To test the CI/CD pipeline, we will update the application code and push it to the application repository (in this case, `Makinates/daniel-sample-caller-workflow/`). You can also trigger the workflow manually from the `Actions` tab.
+
+![Trigger Workflow](./images/gha-workflows/gha-3.png)
+
+Wait for successful deployment
+
+![Successful Deployment](./images/gha-workflows/gha-4.png)
+
+View app in browser
+
+![View App in Browser](./images/gha-workflows/gha-6.png)
