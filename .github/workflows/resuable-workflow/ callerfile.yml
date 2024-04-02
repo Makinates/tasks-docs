@@ -1,0 +1,10 @@
+name: testcall-workflow-passing
+
+on: [push]
+
+jobs:  
+  testcall-workflow-passing-data:
+    uses: .github/workflows/resuable-workflow/learn-gh-action-on-workflow_call.yml
+    with:
+        message: My first resuable workflow done.
+    
