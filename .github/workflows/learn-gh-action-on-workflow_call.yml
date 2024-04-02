@@ -1,11 +1,11 @@
 name: Reusable Workflow
 on:
   workflow_call:
-    inputs:
-      message:
-        required: true
-        description: 'Message to display'
-        type: string
+      inputs:
+        message:
+          required: true
+          type: string
+
 
 jobs:
   display_message:
