@@ -405,7 +405,7 @@ The `terraform apply` command will prompt you to confirm the execution. You woul
 
 ![Showing the `terraform apply` commands and the output](./images/ecs-tf/tf-ecs-3.png)
 
-## Step 4: Verify the Deployed Application
+## Step 5: Verify the Deployed Application
 
 After Terraform successfully applies the configuration, your containerized application should be deployed and running on the ECS cluster.
 
