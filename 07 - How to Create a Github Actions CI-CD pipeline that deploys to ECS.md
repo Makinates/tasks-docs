@@ -319,3 +319,5 @@ Wait for successful deployment
 View app in browser
 
 ![View App in Browser](./images/gha-workflows/gha-6.png)
+
+**Congratulations!** By following this documentation, you have been able to set up a GitHub Actions CI/CD pipeline that builds a Docker image, pushes it to Docker Hub, and deploys it to an Amazon ECS cluster. The pipeline is modularized, and easy to extend for your specific use case.
