@@ -78,3 +78,29 @@ In your workflow YAML files, reference the specific version of your custom actio
       - name: Use Private Action
         uses: ./.github/actions/private-action@v1.0.0
     ```
+
+   or
+
+
+   *If you want to use a private action stored within an organization's repository, you need to ensure that the action is published as a release within that repository.*
+
+1. Organization Repository:<br>
+Ensure that the private action is stored within a repository owned by the organization.
+
+2. Create a Release:<br>
+Navigate to the releases section of the organization's repository and create a new release. Provide a tag name (e.g., v1) and any release notes if necessary.
+
+3. Upload the Action:<br>
+As part of creating the release, upload the contents of your action directory as a release asset.
+
+4. Accessing the Action:<br>
+Once the release is created and the action is uploaded, you can reference it in your workflow YAML file using the organization/private-action@v1 syntax.
+
+    ```yaml
+    jobs:
+    build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Use Private Action
+        uses: organization/private-action@v1.0.0
+    ```
