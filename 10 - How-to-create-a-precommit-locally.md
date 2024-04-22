@@ -6,22 +6,22 @@ Pre-commit hooks are essential scripts that automatically execute before committ
 ## Now, let’s explore some of the most popular pre-commit hooks tailored for Terraform:
 
 1. terraform-docs: This hook meticulously inspects your Terraform configuration files, detecting and correcting documentation errors.
-(Follow documentation for installation)[https://github.com/terraform-docs/terraform-docs]
+[Follow documentation for installation](https://github.com/terraform-docs/terraform-docs)
 
 1. tflint: With this hook, your Terraform configurations undergo a thorough linting process to identify and rectify errors.
-(https://github.com/terraform-linters/tflint)[Follow documentation for installation]
+[Follow documentation for installation](https://github.com/terraform-linters/tflint)
 
 1. tfsec: Ensuring security is paramount, and tfsec specializes in scanning Terraform configurations for potential vulnerabilities.
-(https://github.com/aquasecurity/tfsec)[Follow documentation for installation]
+[Follow documentation for installation](https://github.com/aquasecurity/tfsec)
 
 1. Terraform Fmt: is a Terraform command that is available natively that is used to rewrite Terraform configuration files to a canonical format and style. This command applies a subset of the Terraform language style conventions, along with other minor adjustments for readability.
-(https://developer.hashicorp.com/terraform/cli/commands/fmt)[Follow documentation for installation]
+[Follow documentation for installation](https://developer.hashicorp.com/terraform/cli/commands/fmt)
 
 1. Terraform Trivy: Trivy is a comprehensive and versatile security scanner. Trivy has scanners that look for security issues, and targets where it can find those issues.
-(https://github.com/aquasecurity/trivy)[Documentation of Trivy]
+[Documentation of Trivy](https://github.com/aquasecurity/trivy)
 
 1. checkov: This hook evaluates your Terraform configurations against a predefined set of security best practices, ensuring robust security posture.
-(https://github.com/bridgecrewio/checkov)[Documentation of checkov]
+[Documentation of checkov](https://github.com/bridgecrewio/checkov)
 
 ## To globally install the pre-commit hook and configure it for use with Terraform, follow these steps:
  
