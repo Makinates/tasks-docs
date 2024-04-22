@@ -6,7 +6,7 @@ Pre-commit hooks are essential scripts that automatically execute before committ
 ## Now, let’s explore some of the most popular pre-commit hooks tailored for Terraform:
 
 1. terraform-docs: This hook meticulously inspects your Terraform configuration files, detecting and correcting documentation errors.
-(https://github.com/terraform-docs/terraform-docs)[Follow documentation for installation]
+(Follow documentation for installation)[https://github.com/terraform-docs/terraform-docs]
 
 1. tflint: With this hook, your Terraform configurations undergo a thorough linting process to identify and rectify errors.
 (https://github.com/terraform-linters/tflint)[Follow documentation for installation]
