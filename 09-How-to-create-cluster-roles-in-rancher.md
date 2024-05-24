@@ -1,6 +1,6 @@
 # How to create cluster roles in a Rancher Kubernetes Environment
 
-This task requires you to create two user roles that can be added to Cluster Members in each of the Rancher Kubernetes Clusters. 
+This task requires you to create two user roles that can be added to Cluster Members in each of the Rancher Kubernetes Clusters.
 
 The first role will be for a Read-Only user who is only able to `get`, `list`, and `watch` resources but cannot `create`, `update`, or `delete` resources in the cluster.
 
