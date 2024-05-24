@@ -142,6 +142,8 @@ If you uploaded the dump file to a cloud storage service, you can use `wget` to 
 wget https://cloud-storage.com/dumpfile.tar
 ```
 
+> *Use [this guide](https://chemicloud.com/blog/download-google-drive-files-using-wget) if you have to use `wget` to download the dump file from Google Drive.*
+
 Alternatively, if the dump file is on your local machine, you can copy it directly into the container using `kubectl cp`:
 
 ```sh
