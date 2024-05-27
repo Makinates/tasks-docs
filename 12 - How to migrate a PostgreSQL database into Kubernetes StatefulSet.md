@@ -72,8 +72,8 @@ ENV PATH="/usr/lib/postgresql/16/bin:${PATH}"
 RUN echo "PostgreSQL client version:" && pg_config --version && \
     echo "PATH: $PATH"
 
-# Run the shell
-CMD ["/bin/bash"]
+# Keep the shell running
+CMD ["sh", "-c", "while true; do sleep 10; done"]
 ```
 
 Build and push the image to a container registry:
@@ -89,14 +89,17 @@ You can run the PostgreSQL client as a one-off Pod or create a long-running Pod 
 For a one-off Pod:
 
 ```sh
-kubectl run my-postgresql-client --rm --tty -i --restart='Never' --image docker.io/username/mypg-client:1.0 --env="PGPASSWORD=$POSTGRES_PASSWORD" --command -- psql --host my-postgresql-postgresql -U postgres -d postgres -p 5432
+kubectl run my-postgresql-client --rm --tty -i --restart='Never' --image docker.io/username/mypg-client:1.0 --env="PGPASSWORD=$POSTGRES_PASSWORD" --command -- psql --host my-postgresql -U postgres -d postgres -p 5432
 ```
 
 For a long-running Pod:
 
+*Remember to retrieve the postgresql password from the Helm release notes, first.*
+
 ```sh
 kubectl run my-postgresql-client --image docker.io/username/mypg-client:1.0 --env="PGPASSWORD=$POSTGRES_PASSWORD"
-kubectl exec my-postgresql-client -it -- psql --host my-postgresql-postgresql -U postgres -d postgres -p 5432
+
+kubectl exec my-postgresql-client -it -- psql --host my-postgresql -U postgres -d postgres -p 5432
 ```
 
 - **Create a new user and database:**
@@ -155,18 +158,36 @@ kubectl cp /path/to/dumpfile.tar namespace/pod-name:/path/in/container
 - **Import the database dump:**
 Once the dump file is in the container, use the `pg_restore` command to import it into the new database:
 
-> *If you are using the sample database provide above, note that database file is in zipformat ( dvdrental.zip) so you need to extract it to  dvdrental.tar before loading the sample database into the PostgreSQL database server. Use `unzip dvdrental.zip` to extract the `.tar` dump.*
+> *If you are using the sample database provided above, note that database file is in zip format (dvdrental.zip) so you need to extract it to  dvdrental.tar before loading the sample database into the PostgreSQL database server. Use `unzip dvdrental.zip` to extract the `.tar` dump.*
 
 ```sh
-pg_restore --host my-postgresql-postgresql -U databaseuser -d incoming_db -p 5432 dumpfile.tar
+pg_restore --host my-postgresql -U databaseuser -d incoming_db -p 5432 dumpfile.tar
 ```
 
 - **Verify the import:**
 After the import is complete, you can verify that the data was imported successfully by connecting to the new database and checking the tables:
 
 ```sh
-psql --host my-postgresql-postgresql -U databaseuser -d incoming_db -p 5432
+psql --host my-postgresql -U databaseuser -d incoming_db -p 5432
+```
+
+```sql
 \dt
+```
+
+You can also compare the table sizes to ensure that the import was successfully completed:
+
+```sql
+SELECT
+    schemaname AS schema_name,
+    relname AS table_name,
+    pg_size_pretty(pg_total_relation_size(relid)) AS total_size,
+    pg_size_pretty(pg_relation_size(relid)) AS data_size,
+    pg_size_pretty(pg_total_relation_size(relid) - pg_relation_size(relid)) AS index_size,
+    pg_size_pretty(pg_indexes_size(relid)) AS toast_size
+FROM pg_catalog.pg_statio_user_tables
+WHERE schemaname = 'public'
+ORDER BY pg_total_relation_size(relid) DESC;
 ```
 
 ## Troubleshooting
