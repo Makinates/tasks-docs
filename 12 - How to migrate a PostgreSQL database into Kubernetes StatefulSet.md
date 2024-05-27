@@ -194,4 +194,8 @@ ORDER BY pg_total_relation_size(relid) DESC;
 
 - **Connection issues:** If you encounter connection issues, double-check the PostgreSQL service name, port, username, and password. Also, ensure that the service is accessible from within the cluster.
 - **Permissions issues:** If you encounter permission issues while importing the dump, make sure that the user you're using has the necessary privileges on the target database.
-- **Resource limitations:** If the import process fails due to resource limitations (e.g., memory, CPU), you may need to adjust the resource requests and limits for the PostgreSQL StatefulSet or the client Pod.
+- **Resource limitations:** If the import process fails due to resource limitations (e.g., memory, CPU), you may need to adjust the resource requests and limits for the PostgreSQL StatefulSet or the client Pod. You can also use the Bitnami PostgreSQL Helm chart Resources Presets to set the resource requests and limits for the PostgreSQL StatefulSet or the client Pod. For more information, see the [Resources Presets](https://github.com/bitnami/charts/blob/main/bitnami/common/templates/_resources.tpl#L15) section in the Bitnami PostgreSQL Helm chart documentation.
+
+```sh
+helm install my-postgresql bitnami/postgresql --version 15.4.0 --set primary.persistence.size=50Gi,primary.resourcesPreset=large
+```
