@@ -32,7 +32,7 @@ Installation instructions: [https://kubernetes.io/docs/tasks/tools/install-kubec
 
 ### Terraform/OpenTofu (using TEnv)
 
-Terraform & OpenTofu are infrastructure-as-code (IaC) tools that enable you to provision and manage cloud resources across multiple providers, including AWS, Azure, and Google Cloud. We use TEnv, a utility library, to enhance our Terraform workflow and manager Terraform/OpenTofu versions.
+Terraform & OpenTofu are infrastructure-as-code (IaC) tools that enable you to provision and manage cloud resources across multiple providers, including AWS, Azure, and Google Cloud. We use TEnv, a utility library, to enhance our Terraform/OpenTofu workflow and easily manage multiple versions.
 
 Installation instructions: [https://tofuutils.github.io/tenv/](https://tofuutils.github.io/tenv/)
 
@@ -54,7 +54,7 @@ Ansible is an open-source automation tool that simplifies configuration manageme
 
 Installation instructions: [https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html)
 
-### docker & docker-compose
+### Docker & Docker-Compose
 
 Docker is a containerization platform that allows you to package applications and their dependencies into isolated containers, enabling consistent and reproducible deployments across different environments. Docker Compose is a tool for defining and running multi-container Docker applications.
 
