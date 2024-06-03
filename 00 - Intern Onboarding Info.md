@@ -14,7 +14,7 @@ Slack is our chosen platform for team communication. You will be added to the re
 
 ## Daily Standup and Sprint Planning
 
-We conduct daily standups at 9:00 AM (WAT) to synchronize our efforts and address any blockers or challenges. Additionally, we hold weekly sprint planning sessions every Saturday at 4:00 PM (WAT) to plan and prioritize tasks for the upcoming week.
+We conduct daily standups at 1:30 PM (WAT) to synchronize our efforts and address any blockers or challenges. Additionally, we hold weekly sprint planning sessions every Saturday at 4:00 PM (WAT) to plan and prioritize tasks for the upcoming week.
 
 ## Documentation Requirement
 
