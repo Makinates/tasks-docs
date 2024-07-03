@@ -4,22 +4,22 @@
 
 ![Create](./images/bckstg1.png)
 
-2. Fill the form as required by the template and click on `NEXT` to proceed.
+- Fill the form as required by the template and click on `NEXT` to proceed.
 
 ![Create](./images/bckstg2.png)
 
-3. Select the action to be performed by the pipeline and click on `REVIEW` to proceed.
+- Select the action to be performed by the pipeline and click on `REVIEW` to proceed.
 
 ![Create](./images/bckstg3.png)
 
-4. Review the options and click on `CREATE` to proceed.
+- Review the options and click on `CREATE` to proceed.
 
 ![Create](./images/bckstg4.png)
 
-5. The pipeline will be triggered and you can monitor the progress of the pipeline.
+- The pipeline will be triggered and you can monitor the progress of the pipeline.
 
 ![Create](./images/bckstg5.png)
 
-6. Once the pipeline is completed, you can view the results of the pipeline.
+- Once the pipeline is completed, you can view the results of the pipeline.
 
 ![Create](./images/bckstg6.png)
